@@ -29,12 +29,10 @@ class Application {
 
     @Bean
     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource()
-        dataSource.setDriverClassName( databaseDriver )
-        dataSource.setUrl( databaseUrl )
-        dataSource.setUsername( databaseUsername )
-        dataSource.setPassword( databasePassword )
-        return dataSource;
+        new DriverManagerDataSource( driverClassName:databaseDriver,
+                                     url:databaseUrl,
+                                     username:databaseUsername,
+                                     password:databasePassword )
     }
  
     static void main(String[] args) {
